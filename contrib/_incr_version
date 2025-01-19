@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Bumping to v$2"
+
+sed -i "s/[[:digit:]]\+\.[[:digit:]]\+\.[[:digit:]]\+/$2/" configure.ac
+git add configure.ac
+git commit -e -s -m "Bump version to $2"
